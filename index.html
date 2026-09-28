@@ -153,10 +153,7 @@
     padding: 22px;
     margin-bottom: 32px;
   }
-  .divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; margin: 14px 0; }
-  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .btn-google { background: #fff; color: #1a1a1a; margin-bottom: 8px; }
-  .btn-google, .btn-block { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
+  .btn-block { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
   .btn-alt { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
   .fine {
     text-align: center;
@@ -166,20 +163,6 @@
   }
   .fine a { color: var(--muted); }
   .pm-title { font-weight: 700; font-size: 15px; margin: 0 0 14px; }
-  .signup-sub { font-size: 13px; color: var(--muted); margin: -8px 0 14px; }
-  .recaptcha-box {
-    margin-top: 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: #f9f9f9;
-    padding: 12px 14px;
-  }
-  .recaptcha-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #333; }
-  .recaptcha-check {
-    width: 22px; height: 22px; border: 2px solid #999; border-radius: 3px;
-    background: #fff; flex-shrink: 0;
-  }
-  .recaptcha-logo { margin-left: auto; font-size: 10px; color: #999; font-weight: 600; }
   .field-label { display: block; font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
   .text-field {
     width: 100%;
@@ -207,79 +190,6 @@
   .section-title { font-size: 24px; font-weight: 700; margin: 0 0 6px; }
   .section-sub { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
 
-  .value-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 26px 22px;
-    text-align: center;
-    margin-bottom: 14px;
-  }
-  .value-card .emoji { font-size: 32px; margin-bottom: 12px; }
-  .value-card h3 { margin: 0 0 8px; font-size: 17px; }
-  .value-card p { margin: 0; color: var(--muted); font-size: 13.5px; }
-
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
-  .grid2 .cell {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 12px;
-    text-align: center;
-  }
-  .grid2 .cell .emoji { font-size: 24px; margin-bottom: 8px; display: block; }
-  .grid2 .cell p { margin: 0; font-size: 12.5px; font-weight: 600; }
-
-  .big-step {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 26px 20px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  .big-step .icon-badge {
-    width: 52px; height: 52px;
-    border-radius: 14px;
-    background: var(--accent-soft);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px;
-    margin: 0 auto 16px;
-  }
-  .big-step h3 { font-size: 19px; margin: 0 0 8px; }
-  .big-step p { color: var(--muted); font-size: 13.5px; margin: 0 0 18px; }
-
-  .mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; text-align: left; }
-  .mini-grid .mg-card { background: var(--surface-2); border-radius: 12px; overflow: hidden; }
-  .mini-grid .mg-icon {
-    height: 64px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 26px;
-  }
-  .mini-grid .mg-info { padding: 8px 10px 10px; }
-  .mini-grid .mg-name {
-    font-size: 12px; font-weight: 700; margin: 0 0 5px;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .mini-grid .mg-row { display: flex; justify-content: space-between; align-items: center; }
-  .mini-grid .mg-tag {
-    font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 5px;
-    background: var(--accent-soft); color: var(--accent);
-  }
-  .mini-grid .mg-price { font-size: 12px; font-weight: 700; }
-
-  .mini-milestones { text-align: left; }
-  .mini-milestones .m-row {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--surface-2);
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 6px;
-    font-size: 12.5px;
-  }
-  .mini-milestones .m-row.done { opacity: 0.5; }
-  .mini-milestones .check { color: var(--accent); }
-
   .payout-collage {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -301,8 +211,6 @@
     padding: 6px;
     color: var(--text);
   }
-  .balance-line { font-size: 13px; color: var(--muted); }
-  .balance-line b { color: var(--text); font-size: 17px; }
 
   .faq { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
   .faq summary {
@@ -321,29 +229,6 @@
   .faq summary .plus { color: var(--accent); font-size: 20px; flex-shrink: 0; transition: transform 0.15s; }
   .faq[open] summary .plus { transform: rotate(45deg); }
   .faq p { margin: 0; padding: 0 16px 16px; color: var(--muted); font-size: 13.5px; }
-
-  .payouts { margin-bottom: 36px; }
-  .payouts-title { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; margin-bottom: 14px; }
-  .dot-live { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-  .payout-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-bottom: 10px;
-  }
-  .payout-icon {
-    width: 34px; height: 34px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px; flex-shrink: 0; background: var(--surface-2);
-  }
-  .payout-row .who { font-size: 13.5px; }
-  .payout-row .who b { font-weight: 600; }
-  .payout-row .time { float: right; color: var(--muted); font-size: 11.5px; }
-  .payout-row .amt { color: var(--accent); font-weight: 700; }
 
   .footer-cta { text-align: center; padding: 20px 0 44px; position: relative; }
   .mascot-wrap { position: relative; width: 160px; height: 160px; margin: 0 auto 6px; }
@@ -464,33 +349,21 @@
     <div class="cta-panel" id="signup-card">
       <p class="pm-title">Create your account</p>
 
+      <!-- Step 1: email -->
       <div id="signup-main">
-        <button class="btn btn-google btn-block" onclick="signInWithGoogle()">Continue with Google</button>
-        <div class="divider">or</div>
-        <button class="btn btn-alt btn-block" onclick="showStep('signup-email')">Continue with email</button>
+        <label class="field-label" for="signup-email-input">Email address</label>
+        <input class="text-field" type="email" id="signup-email-input" placeholder="you@example.com" autocomplete="email">
+        <button class="btn btn-solid btn-block" style="margin-top:10px;" onclick="goToPassword()">Continue</button>
+        <p class="fine" id="email-error" style="color:#e06060; display:none;"></p>
       </div>
 
-      <div id="signup-email" style="display:none;">
-        <label class="field-label">Email address</label>
-        <input class="text-field" type="email" id="signup-email-input" placeholder="you@example.com">
-        <button class="btn btn-solid btn-block" style="margin-top:10px;" onclick="showStep('signup-password')">Continue</button>
-        <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-main')">Back</button>
-      </div>
-
+      <!-- Step 2: password -->
       <div id="signup-password" style="display:none;">
-        <label class="field-label" id="password-label">Create a password</label>
-        <input class="text-field" type="password" id="signup-password-input" placeholder="At least 8 characters">
+        <label class="field-label" id="password-label" for="signup-password-input">Create a password</label>
+        <input class="text-field" type="password" id="signup-password-input" placeholder="At least 8 characters" autocomplete="current-password">
         <button class="btn btn-solid btn-block" style="margin-top:10px;" id="email-submit-btn" onclick="submitEmailAuth()">Create account</button>
-        <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-email')">Back</button>
+        <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-main')">Back</button>
         <p class="fine" id="signup-error" style="color:#e06060; display:none;"></p>
-      </div>
-
-      <div class="recaptcha-box">
-        <div class="recaptcha-row">
-          <span class="recaptcha-check"></span>
-          <span>I'm not a robot</span>
-          <span class="recaptcha-logo">reCAPTCHA</span>
-        </div>
       </div>
 
       <p class="fine">One account per person. Using a VPN or creating multiple accounts may get your account suspended.</p>
@@ -557,24 +430,16 @@
   const SUPABASE_ANON_KEY = 'sb_publishable_jLyWjlVov0INtNKfRzVb1g_ktqoykq_';
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  async function signInWithGoogle() {
-    const { error } = await sb.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: new URL('dashboard.html', window.location.href).href
-      }
-    });
-
-    if (error) {
-      alert('Google sign-in failed: ' + error.message);
-    }
-  }
-
   let authMode = 'signup';
+
+  function showStep(id) {
+    ['signup-main', 'signup-password'].forEach(s => {
+      document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
+    });
+  }
 
   function setAuthMode(mode) {
     authMode = mode;
-
     const isSignIn = mode === 'signin';
 
     document.querySelector('#signup-card .pm-title').textContent =
@@ -591,13 +456,27 @@
       : 'Already have an account? <a href="#signup-card" onclick="setAuthMode(\'signin\'); return false;">Sign in</a>';
 
     document.getElementById('signup-error').style.display = 'none';
+    document.getElementById('email-error').style.display = 'none';
 
     showStep('signup-main');
   }
 
+  function goToPassword() {
+    const email = document.getElementById('signup-email-input').value.trim();
+    const err = document.getElementById('email-error');
+
+    if (!email || !email.includes('@')) {
+      err.textContent = 'Please enter a valid email address.';
+      err.style.display = 'block';
+      return;
+    }
+
+    err.style.display = 'none';
+    showStep('signup-password');
+  }
+
   function showAuthMessage(text, isError) {
     const el = document.getElementById('signup-error');
-
     el.textContent = text;
     el.style.color = isError ? '#e06060' : '#2FAE73';
     el.style.display = 'block';
@@ -616,10 +495,7 @@
 
     // Existing account sign-in
     if (authMode === 'signin') {
-      const { error } = await sb.auth.signInWithPassword({
-        email,
-        password
-      });
+      const { error } = await sb.auth.signInWithPassword({ email, password });
 
       if (error) {
         showAuthMessage(error.message, true);
@@ -630,17 +506,8 @@
       return;
     }
 
-    // New account registration
-    const { data, error } = await sb.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: new URL(
-          'dashboard.html',
-          window.location.href
-        ).href
-      }
-    });
+    // New account registration (no email confirmation)
+    const { data, error } = await sb.auth.signUp({ email, password });
 
     if (error) {
       showAuthMessage(error.message, true);
@@ -650,9 +517,10 @@
     if (data.session) {
       window.location.href = 'dashboard.html';
     } else {
+      // Only happens if "Confirm email" is still ON in Supabase
       showAuthMessage(
-        'Account created. Check your email for a confirmation link, then come back and sign in.',
-        false
+        'Account created, but Supabase still requires email confirmation. Turn off "Confirm email" in Authentication settings.',
+        true
       );
     }
   }
@@ -665,12 +533,6 @@
 </script>
 
 <script>
-  function showStep(id) {
-    ['signup-main', 'signup-email', 'signup-password'].forEach(s => {
-      document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
-    });
-  }
-
   document.querySelectorAll('.offer-card').forEach(card => {
     const price = parseFloat(card.dataset.price);
     const minutes = parseFloat(card.dataset.minutes);
