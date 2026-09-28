@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -380,6 +379,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$9.10</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" data-price="3.00" data-minutes="5">
         <div class="offer-icon-wrap" style="background:#111;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff" stroke="none"/></svg></div>
         <div class="offer-body">
@@ -388,6 +388,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$3.00</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" data-price="2.40" data-minutes="4">
         <div class="offer-icon-wrap" style="background:#e02020;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5l6 2.5-6 2.5z" fill="#fff" stroke="none"/></svg></div>
         <div class="offer-body">
@@ -396,6 +397,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$2.40</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" data-price="32.17" data-minutes="20">
         <div class="offer-icon-wrap" style="background:#7ac700;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 5h6v6"/></svg></div>
         <div class="offer-body">
@@ -413,6 +415,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$9.10</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" aria-hidden="true" data-price="3.00" data-minutes="5">
         <div class="offer-icon-wrap" style="background:#111;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff" stroke="none"/></svg></div>
         <div class="offer-body">
@@ -421,6 +424,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$3.00</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" aria-hidden="true" data-price="2.40" data-minutes="4">
         <div class="offer-icon-wrap" style="background:#e02020;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5l6 2.5-6 2.5z" fill="#fff" stroke="none"/></svg></div>
         <div class="offer-body">
@@ -429,6 +433,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$2.40</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
+
       <div class="offer-card" aria-hidden="true" data-price="32.17" data-minutes="20">
         <div class="offer-icon-wrap" style="background:#7ac700;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 5h6v6"/></svg></div>
         <div class="offer-body">
@@ -458,17 +463,20 @@
 
     <div class="cta-panel" id="signup-card">
       <p class="pm-title">Create your account</p>
+
       <div id="signup-main">
         <button class="btn btn-google btn-block" onclick="signInWithGoogle()">Continue with Google</button>
         <div class="divider">or</div>
         <button class="btn btn-alt btn-block" onclick="showStep('signup-email')">Continue with email</button>
       </div>
+
       <div id="signup-email" style="display:none;">
         <label class="field-label">Email address</label>
         <input class="text-field" type="email" id="signup-email-input" placeholder="you@example.com">
         <button class="btn btn-solid btn-block" style="margin-top:10px;" onclick="showStep('signup-password')">Continue</button>
         <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-main')">Back</button>
       </div>
+
       <div id="signup-password" style="display:none;">
         <label class="field-label" id="password-label">Create a password</label>
         <input class="text-field" type="password" id="signup-password-input" placeholder="At least 8 characters">
@@ -476,6 +484,7 @@
         <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-email')">Back</button>
         <p class="fine" id="signup-error" style="color:#e06060; display:none;"></p>
       </div>
+
       <div class="recaptcha-box">
         <div class="recaptcha-row">
           <span class="recaptcha-check"></span>
@@ -483,6 +492,7 @@
           <span class="recaptcha-logo">reCAPTCHA</span>
         </div>
       </div>
+
       <p class="fine">One account per person. Using a VPN or creating multiple accounts may get your account suspended.</p>
       <p class="fine" id="auth-toggle">Already have an account? <a href="#signup-card" onclick="setAuthMode('signin'); return false;">Sign in</a></p>
       <p class="fine">By continuing you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
@@ -503,6 +513,7 @@
       <summary>Does Taskly really pay?<span class="plus">+</span></summary>
       <p>Yes. Every completed task is confirmed by the provider and paid straight to your balance — pending tasks are always shown clearly, so you know exactly where you stand.</p>
     </details>
+
     <details class="faq">
       <summary>How is Taskly able to pay so well?<span class="plus">+</span></summary>
       <p>We partner directly with providers who fund each task, which lets us offer some of the highest payouts around.</p>
@@ -515,6 +526,7 @@
       <span class="fx" style="top:6px; right:8px;">🪙</span>
       <span class="fx" style="bottom:34px; left:0;">✨</span>
       <span class="fx" style="bottom:30px; right:4px;">💵</span>
+
       <svg viewBox="0 0 160 160" width="160" height="160">
         <circle cx="80" cy="80" r="72" fill="var(--surface)"/>
         <circle cx="80" cy="58" r="22" fill="#F2C4A0"/>
@@ -529,6 +541,7 @@
         <path d="M72 66 Q80 72 88 66" stroke="#2A1E17" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       </svg>
     </div>
+
     <h2>Ready to start?</h2>
     <p>It's free, and you keep every cent you earn.</p>
     <a class="btn btn-solid btn-block" href="#signup-card">Start earning</a>
@@ -537,6 +550,7 @@
 
 <!-- Supabase client -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
 <script>
   // Supabase project values
   const SUPABASE_URL = 'https://aywjklspfdbjyrnyqbzj.supabase.co';
@@ -546,28 +560,44 @@
   async function signInWithGoogle() {
     const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: new URL('dashboard.html', window.location.href).href }
+      options: {
+        redirectTo: new URL('dashboard.html', window.location.href).href
+      }
     });
-    if (error) alert('Google sign-in failed: ' + error.message);
+
+    if (error) {
+      alert('Google sign-in failed: ' + error.message);
+    }
   }
 
   let authMode = 'signup';
 
   function setAuthMode(mode) {
     authMode = mode;
+
     const isSignIn = mode === 'signin';
-    document.querySelector('#signup-card .pm-title').textContent = isSignIn ? 'Welcome back' : 'Create your account';
-    document.getElementById('password-label').textContent = isSignIn ? 'Password' : 'Create a password';
-    document.getElementById('email-submit-btn').textContent = isSignIn ? 'Sign in' : 'Create account';
+
+    document.querySelector('#signup-card .pm-title').textContent =
+      isSignIn ? 'Welcome back' : 'Create your account';
+
+    document.getElementById('password-label').textContent =
+      isSignIn ? 'Password' : 'Create a password';
+
+    document.getElementById('email-submit-btn').textContent =
+      isSignIn ? 'Sign in' : 'Create account';
+
     document.getElementById('auth-toggle').innerHTML = isSignIn
       ? 'New here? <a href="#signup-card" onclick="setAuthMode(\'signup\'); return false;">Create an account</a>'
       : 'Already have an account? <a href="#signup-card" onclick="setAuthMode(\'signin\'); return false;">Sign in</a>';
+
     document.getElementById('signup-error').style.display = 'none';
+
     showStep('signup-main');
   }
 
   function showAuthMessage(text, isError) {
     const el = document.getElementById('signup-error');
+
     el.textContent = text;
     el.style.color = isError ? '#e06060' : '#2FAE73';
     el.style.display = 'block';
@@ -576,6 +606,7 @@
   async function submitEmailAuth() {
     const email = document.getElementById('signup-email-input').value.trim();
     const password = document.getElementById('signup-password-input').value;
+
     document.getElementById('signup-error').style.display = 'none';
 
     if (!email || !password) {
@@ -583,25 +614,53 @@
       return;
     }
 
+    // Existing account sign-in
     if (authMode === 'signin') {
-      const { error } = await sb.auth.signInWithPassword({ email, password });
-      if (error) { showAuthMessage(error.message, true); return; }
+      const { error } = await sb.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        showAuthMessage(error.message, true);
+        return;
+      }
+
       window.location.href = 'dashboard.html';
       return;
     }
 
-    const { data, error } = await sb.auth.signUp({ email, password });
-    if (error) { showAuthMessage(error.message, true); return; }
+    // New account registration
+    const { data, error } = await sb.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: new URL(
+          'dashboard.html',
+          window.location.href
+        ).href
+      }
+    });
+
+    if (error) {
+      showAuthMessage(error.message, true);
+      return;
+    }
 
     if (data.session) {
       window.location.href = 'dashboard.html';
     } else {
-      showAuthMessage('Account created. Check your email for a confirmation link, then come back and sign in.', false);
+      showAuthMessage(
+        'Account created. Check your email for a confirmation link, then come back and sign in.',
+        false
+      );
     }
   }
 
   sb.auth.getSession().then(({ data: { session } }) => {
-    if (session) window.location.href = 'dashboard.html';
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
   });
 </script>
 
@@ -628,14 +687,27 @@
 
   function tick() {
     const word = words[w];
-    el.textContent = deleting ? word.slice(0, c--) : word.slice(0, c++);
-    if (!deleting && c === word.length + 1) { deleting = true; setTimeout(tick, 1400); return; }
-    if (deleting && c === 0) { deleting = false; w = (w + 1) % words.length; }
+
+    el.textContent = deleting
+      ? word.slice(0, c--)
+      : word.slice(0, c++);
+
+    if (!deleting && c === word.length + 1) {
+      deleting = true;
+      setTimeout(tick, 1400);
+      return;
+    }
+
+    if (deleting && c === 0) {
+      deleting = false;
+      w = (w + 1) % words.length;
+    }
+
     setTimeout(tick, deleting ? 35 : 60);
   }
+
   tick();
 </script>
 
 </body>
 </html>
-```
