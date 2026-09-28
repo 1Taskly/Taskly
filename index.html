@@ -357,8 +357,8 @@
 <header>
   <div class="brand">Task<span>ly</span></div>
   <div class="header-actions">
-    <a class="btn btn-ghost" href="#signup-card">Sign in</a>
-    <a class="btn btn-solid" href="#signup-card">Sign up</a>
+    <a class="btn btn-ghost" href="#signup-card" onclick="setAuthMode('signin')">Sign in</a>
+    <a class="btn btn-solid" href="#signup-card" onclick="setAuthMode('signup')">Sign up</a>
   </div>
 </header>
 
@@ -469,9 +469,9 @@
         <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-main')">Back</button>
       </div>
       <div id="signup-password" style="display:none;">
-        <label class="field-label">Create a password</label>
+        <label class="field-label" id="password-label">Create a password</label>
         <input class="text-field" type="password" id="signup-password-input" placeholder="At least 8 characters">
-        <button class="btn btn-solid btn-block" style="margin-top:10px;" onclick="signUpWithEmail()">Create account</button>
+        <button class="btn btn-solid btn-block" style="margin-top:10px;" id="email-submit-btn" onclick="submitEmailAuth()">Create account</button>
         <button class="btn btn-alt btn-block" style="margin-top:8px;" onclick="showStep('signup-email')">Back</button>
         <p class="fine" id="signup-error" style="color:#e06060; display:none;"></p>
       </div>
@@ -483,7 +483,8 @@
         </div>
       </div>
       <p class="fine">One account per person. Using a VPN or creating multiple accounts may get your account suspended.</p>
-      <p class="fine">By continuing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+      <p class="fine" id="auth-toggle">Already have an account? <a href="#signup-card" onclick="setAuthMode('signin'); return false;">Sign in</a></p>
+      <p class="fine">By continuing you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
     </div>
   </section>
 
@@ -543,34 +544,66 @@
   async function signInWithGoogle() {
     const { error } = await sb.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin + '/dashboard.html' }
+      options: { redirectTo: new URL('dashboard.html', window.location.href).href }
     });
     if (error) alert('Google sign-in failed: ' + error.message);
   }
 
-  async function signUpWithEmail() {
+  let authMode = 'signup';
+
+  function setAuthMode(mode) {
+    authMode = mode;
+    const isSignIn = mode === 'signin';
+    document.querySelector('#signup-card .pm-title').textContent = isSignIn ? 'Welcome back' : 'Create your account';
+    document.getElementById('password-label').textContent = isSignIn ? 'Password' : 'Create a password';
+    document.getElementById('email-submit-btn').textContent = isSignIn ? 'Sign in' : 'Create account';
+    document.getElementById('auth-toggle').innerHTML = isSignIn
+      ? 'New here? <a href="#signup-card" onclick="setAuthMode(\'signup\'); return false;">Create an account</a>'
+      : 'Already have an account? <a href="#signup-card" onclick="setAuthMode(\'signin\'); return false;">Sign in</a>';
+    document.getElementById('signup-error').style.display = 'none';
+    showStep('signup-main');
+  }
+
+  function showAuthMessage(text, isError) {
+    const el = document.getElementById('signup-error');
+    el.textContent = text;
+    el.style.color = isError ? '#e06060' : '#2FAE73';
+    el.style.display = 'block';
+  }
+
+  async function submitEmailAuth() {
     const email = document.getElementById('signup-email-input').value.trim();
     const password = document.getElementById('signup-password-input').value;
-    const errorEl = document.getElementById('signup-error');
-    errorEl.style.display = 'none';
+    document.getElementById('signup-error').style.display = 'none';
 
     if (!email || !password) {
-      errorEl.textContent = 'Please enter an email and password.';
-      errorEl.style.display = 'block';
+      showAuthMessage('Please enter an email and password.', true);
       return;
     }
 
-    const { error } = await sb.auth.signUp({ email, password });
-    if (error) {
-      errorEl.textContent = error.message;
-      errorEl.style.display = 'block';
+    if (authMode === 'signin') {
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) { showAuthMessage(error.message, true); return; }
+      window.location.href = 'dashboard.html';
       return;
     }
-    // If email confirmation is on in your Supabase settings, the user needs
-    // to click a link in their inbox before they can sign in. Otherwise
-    // they're signed in immediately and we can send them to the dashboard.
-    window.location.href = 'dashboard.html';
+
+    const { data, error } = await sb.auth.signUp({ email, password });
+    if (error) { showAuthMessage(error.message, true); return; }
+
+    if (data.session) {
+      // Email confirmation is off: they're signed in already.
+      window.location.href = 'dashboard.html';
+    } else {
+      // Email confirmation is on: they must click the link in their inbox first.
+      showAuthMessage('Account created. Check your email for a confirmation link, then come back and sign in.', false);
+    }
   }
+
+  // Already signed in (or just returned from Google)? Go straight to the dashboard.
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) window.location.href = 'dashboard.html';
+  });
 </script>
 
 <script>
