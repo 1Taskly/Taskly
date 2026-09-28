@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -403,7 +404,7 @@
           <div class="offer-foot"><div class="of-col"><span class="price">$32.17</span><span class="sub"><b class="mins"></b> min</span></div><div class="of-col right"><span class="daily"><b class="daily-amt"></b></span><span class="sub">/day</span></div></div>
         </div>
       </div>
-      <!-- duplicate set for seamless infinite loop -->
+
       <div class="offer-card" aria-hidden="true" data-price="9.10" data-minutes="15">
         <div class="offer-icon-wrap" style="background:#00A651;"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a2 2 0 0 0 2 2v10M7 2v6M10 2v6M13 2v8"/><path d="M18 2c-2 3-2 6 0 8v12"/></svg></div>
         <div class="offer-body">
@@ -507,6 +508,7 @@
       <p>We partner directly with providers who fund each task, which lets us offer some of the highest payouts around.</p>
     </details>
   </section>
+
   <section class="footer-cta">
     <div class="mascot-wrap">
       <span class="fx" style="top:0; left:10px;">💵</span>
@@ -536,8 +538,8 @@
 <!-- Supabase client -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-  // TODO: replace with your real Supabase project values (Project Settings > API)
-  const SUPABASE_URL = 'https://aywjklspfdbjyrnyqbzj.supabase.co/rest/v1/';
+  // Supabase project values
+  const SUPABASE_URL = 'https://aywjklspfdbjyrnyqbzj.supabase.co';
   const SUPABASE_ANON_KEY = 'sb_publishable_jLyWjlVov0INtNKfRzVb1g_ktqoykq_';
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -592,15 +594,12 @@
     if (error) { showAuthMessage(error.message, true); return; }
 
     if (data.session) {
-      // Email confirmation is off: they're signed in already.
       window.location.href = 'dashboard.html';
     } else {
-      // Email confirmation is on: they must click the link in their inbox first.
       showAuthMessage('Account created. Check your email for a confirmation link, then come back and sign in.', false);
     }
   }
 
-  // Already signed in (or just returned from Google)? Go straight to the dashboard.
   sb.auth.getSession().then(({ data: { session } }) => {
     if (session) window.location.href = 'dashboard.html';
   });
@@ -639,3 +638,4 @@
 
 </body>
 </html>
+```
